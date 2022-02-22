@@ -5,6 +5,10 @@ You can follow the tutorial to get your bot set up following the instructions he
 https://docs.wpilib.org/en/stable/docs/zero-to-robot/step-2/offline-installation-preparations.html
 Make sure you download the driver station software and the FRC version of VSCode.
 
+You will need to install:
+1) 2022 FRC Game Tools
+2) C++ WPILib Installer
+
 This is code written in C++.  Code is uploaded to the bot over a wifi connection.  You will need to install FRC's custom version of VSCode to use it's tools.
 
 Steps to uploading your code:
