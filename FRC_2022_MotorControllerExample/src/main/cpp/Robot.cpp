@@ -20,7 +20,8 @@ class Robot : public frc::TimedRobot {
  public:
   void TeleopPeriodic() override { 
     //left_motor.Set(m_controller.GetLeftY());
-    right_motor.Set(m_controller.GetLeftX()); 
+    right_motor.Set(m_controller.GetLeftY());
+    left_motor.Set(m_controller.GetRightY());
     }
 
   void AutonomousInit() override{
@@ -44,8 +45,8 @@ class Robot : public frc::TimedRobot {
  private:
   //frc::Joystick m_stick{0};
   frc::XboxController m_controller{0};
-  frc::PWMSparkMax left_motor{0};
-  frc::PWMSparkMax right_motor{1};
+  frc::PWMSparkMax left_motor{3};
+  frc::PWMSparkMax right_motor{0};
   time_t autoTimeStamp;
   time_t delay = 2;
   double maxSpeed = 0.15;
