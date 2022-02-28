@@ -13,12 +13,12 @@
  * Runs the motors with tank steering and an Xbox controller.
  */
 class Robot : public frc::TimedRobot {
-  frc::PWMVictorSPX m_leftMotor{0};
-  frc::PWMVictorSPX m_rightMotor{1};
+  frc::PWMVictorSPX m_rightMotor{0};
+  frc::PWMVictorSPX m_leftMotor{1};
   frc::PWMSparkMax fireMotor{2};
-  frc::PWMSparkMax hopperMotor{3};
+  frc::PWMVictorSPX hopperMotor{3};
   frc::PWMSparkMax inTakeMotor{4};
-  frc::PWMSparkMax armMotor{5};
+  frc::PWMVictorSPX armMotor{5};
   frc::DifferentialDrive m_robotDrive{m_leftMotor, m_rightMotor};
   frc::XboxController m_driverController{0};
 
@@ -34,6 +34,7 @@ class Robot : public frc::TimedRobot {
     // gearbox is constructed, you might have to invert the left side instead.
     m_rightMotor.SetInverted(true);
     fireMotor.SetInverted(true);
+    armMotor.SetInverted(true);
   }
 
   void TeleopPeriodic() override {
